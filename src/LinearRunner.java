@@ -19,6 +19,7 @@ public class LinearRunner {
         int x2 = Integer.parseInt(cord2.substring(1,indexOfX2));
         int y2 = Integer.parseInt(cord2.substring(indexOfX2 + 2,indexOfY2));
 
-
+        LinearCalculator calc = new LinearCalculator(x1, y1, x2, y2);
+        System.out.println(calc.distance());
     }
 }
