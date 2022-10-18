@@ -13,8 +13,28 @@ public class LinearCalculator {
 
     public double distance() {
         double far = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        return  far;
+        return far;
     }
 
+    public double getSlope() {
+        double slope = (double) (y2 - y1) / (x2 - x1);
+        return slope;
+    }
 
+    public double getY() {
+        double y = y1 - getSlope() * x1;
+        return y;
+    }
+
+    public String getEquation() {
+        if (getY() == 0) {
+            return "y = " + getSlope() + "x";
+        } else {
+            if (getY() < 0) {
+                return "y = " + getSlope() + "x - " + getY();
+            } else {
+                return "y = " + getSlope() + "x + " + getY();
+            }
+        }
+    }
 }
