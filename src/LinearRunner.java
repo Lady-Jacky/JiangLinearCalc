@@ -6,9 +6,10 @@ public class LinearRunner {
         Scanner scan = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("0.00");
 
-        System.out.print("Enter coords: ");
+        System.out.println("Welcome!");
+        System.out.print("Enter coordinate 1: ");
         String cord1 = scan.nextLine();
-        System.out.print("Enter coords: ");
+        System.out.print("Enter coordinate 2: ");
         String cord2 = scan.nextLine();
 
         int indexOfX1 = cord1.indexOf(", ");
@@ -24,11 +25,19 @@ public class LinearRunner {
         int x2 = Integer.parseInt(cord2.substring(1,indexOfX2));
         int y2 = Integer.parseInt(cord2.substring(indexOfX2 + 2,indexOfY2));
 
+        System.out.println();
+        System.out.println("The 2 points are: " + cord1 + " and " + cord2);
         LinearCalculator calc = new LinearCalculator(x1, y1, x2, y2);
-        System.out.println("Distance: " + df.format(calc.distance()));
+        System.out.println("The equation of the line between the 2 points is: " + calc.getEquation());
+        System.out.println("The slope of the line is: " + df.format(calc.getSlope()));
+        System.out.println("The y-intercept of the line is: " + df.format(calc.getY()));
+        System.out.println("The distance between the 2 points is: " + df.format(calc.distance()));
+        System.out.println();
+        System.out.print("Enter a value for x: ");
+        double x = scan.nextDouble();
+        System.out.println();
+        System.out.println("The point on the line is: " + calc.getPoints(x));
 
-        System.out.println("Slope: " + calc.getSlope());
-        System.out.println("Equation: " + calc.getEquation());
-        System.out.println("The y-intercept is: " + calc.getY());
+
     }
 }
