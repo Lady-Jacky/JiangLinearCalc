@@ -28,16 +28,18 @@ public class LinearRunner {
         System.out.println();
         System.out.println("The 2 points are: " + cord1 + " and " + cord2);
         LinearCalculator calc = new LinearCalculator(x1, y1, x2, y2);
-        System.out.println("The equation of the line between the 2 points is: " + calc.getEquation());
-        System.out.println("The slope of the line is: " + df.format(calc.getSlope()));
-        System.out.println("The y-intercept of the line is: " + df.format(calc.getY()));
-        System.out.println("The distance between the 2 points is: " + df.format(calc.distance()));
-        System.out.println();
-        System.out.print("Enter a value for x: ");
-        double x = scan.nextDouble();
-        System.out.println();
-        System.out.println("The point on the line is: " + calc.getPoints(x));
-
-
+        if (x1 == x2) {
+            System.out.println("These points are on a vertical line: x = " + x1 );
+        } else {
+            System.out.println("The equation of the line between the 2 points is: " + calc.getEquation());
+            System.out.println("The slope of the line is: " + calc.getSlope());
+            System.out.println("The y-intercept of the line is: " + calc.getY());
+            System.out.println("The distance between the 2 points is: " + calc.distance());
+            System.out.println();
+            System.out.print("Enter a value for x: ");
+            double x = scan.nextDouble();
+            System.out.println();
+            System.out.println("The point on the line is: " + calc.getPoints(x));
+        }
     }
 }

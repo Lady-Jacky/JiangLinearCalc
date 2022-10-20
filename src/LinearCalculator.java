@@ -1,10 +1,9 @@
-import java.text.DecimalFormat;
 public class LinearCalculator {
     private int x1;
     private int y1;
     private int x2;
     private int y2;
-    DecimalFormat df = new DecimalFormat("0.00");
+
 
     public LinearCalculator(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
@@ -15,12 +14,12 @@ public class LinearCalculator {
 
     public double distance() {
         double far = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        return far;
+        return roundToHunderedths(far);
     }
 
     public double getSlope() {
-        double slope = (double) (y2 - y1) / (x2 - x1);
-        return slope;
+        double slope = (double) (y2 - y1) / (double)(x2 - x1);
+        return roundToHunderedths(slope);
     }
 
     public String findSlope() {
@@ -34,8 +33,8 @@ public class LinearCalculator {
     }
 
     public double getY() {
-        double y = y1 - getSlope() * x1;
-        return y;
+        double y = (double)y1 - (getSlope() * x1);
+        return roundToHunderedths(y);
     }
 
     public String getEquation() {
@@ -43,15 +42,19 @@ public class LinearCalculator {
             return "y = " + findSlope() + "x";
         } else {
             if (getY() < 0) {
-                return "y = " + findSlope() + "x" + df.format(getY());
+                return "y = " + findSlope() + "x" + getY();
             } else {
-                return "y = " +  findSlope() + "x + " + df.format(getY());
+                return "y = " +  findSlope() + "x + " + getY();
             }
         }
     }
 
     public String getPoints(double x) {
         double y = (getSlope()*x) + getY();
-        return "(" + x + ", " + df.format(y) + ")";
+        return "(" + x + ", " + roundToHunderedths(y) + ")";
+    }
+
+    public double roundToHunderedths(double num) {
+        return (double)(Math.round(num*100))/100;
     }
 }
