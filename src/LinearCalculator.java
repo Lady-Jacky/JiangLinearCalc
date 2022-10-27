@@ -18,13 +18,13 @@ public class LinearCalculator {
     }
 
     public double getSlope() {
-        double slope = (double) (y2 - y1) / (double)(x2 - x1);
+        double slope = (double) (y2 - y1) / (double) (x2 - x1);
         return roundToHunderedths(slope);
     }
 
     public String findSlope() {
         if (getSlope() % (int) getSlope() == 0) {
-            return "" + (int)getSlope();
+            return "" + (int) getSlope();
         } else {
             int numerator = y2 - y1;
             int denominator = x2 - x1;
@@ -41,18 +41,40 @@ public class LinearCalculator {
     }
 
     public double getY() {
-        double y = (double)y1 - (getSlope() * x1);
+        double y = (double) y1 - (getSlope() * x1);
         return roundToHunderedths(y);
     }
 
     public String getEquation() {
-        if (getY() == 0) {
-            return "y = " + findSlope() + "x";
+        if (getSlope() == 0) {
+            return "y = " + getY();
         } else {
-            if (getY() < 0) {
-                return "y = " + findSlope() + "x" + getY();
+            if (getY() == 0) {
+                if (getSlope() == 1) {
+                    return "y = " + "x";
+                } else if (getSlope() == -1) {
+                    return "y = " + "-x";
+                } else {
+                    return "y = " + findSlope() + "x";
+                }
             } else {
-                return "y = " +  findSlope() + "x + " + getY();
+                if (getY() < 0) {
+                    if (getSlope() == 1) {
+                        return "y = " + "x - " + Math.abs(getY());
+                    } else if (getSlope() == -1) {
+                        return "y = " + "-x - " + Math.abs(getY());
+                    } else {
+                        return "y = " + findSlope() + "x - " + Math.abs(getY());
+                    }
+                } else {
+                    if (getSlope() == 1) {
+                        return "y = " + "x + " + getY();
+                    } else if (getSlope() == -1) {
+                        return "y = " + "-x + " + getY();
+                    } else {
+                        return "y = " + findSlope() + "x + " + getY();
+                    }
+                }
             }
         }
     }
