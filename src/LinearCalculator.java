@@ -28,7 +28,15 @@ public class LinearCalculator {
         } else {
             int numerator = y2 - y1;
             int denominator = x2 - x1;
-            return numerator + "/" + denominator;
+            if (numerator < 0 && denominator < 0) {
+                return Math.abs(numerator) + "/" + Math.abs(denominator);
+            } else {
+                if (denominator < 0) {
+                    return numerator * -1 + "/" + Math.abs(denominator);
+                } else {
+                    return numerator + "/" + denominator;
+                }
+            }
         }
     }
 

@@ -40,6 +40,6 @@ public class LinearRunner {
             double x = scan.nextDouble();
             System.out.println();
             System.out.println("The point on the line is: " + calc.getPoints(x));
-        }
+    }
     }
 }
