@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="938f8406-571d-413a-bacf-fe07630e0e5e" name="Changes" comment="added slope stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LinearCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearCalculator.java" afterDir="false" />
-    </list>
+    <list default="true" id="938f8406-571d-413a-bacf-fe07630e0e5e" name="Changes" comment="Fnished?" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666830233580</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fnished?">
+      <created>1666832258744</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666832258744</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added slope stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="added slope stuff" />
+    <MESSAGE value="Fnished?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fnished?" />
   </component>
 </project>
